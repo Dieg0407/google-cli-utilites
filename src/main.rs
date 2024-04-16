@@ -1,3 +1,7 @@
+use clap::Parser;
+use gcli::Gcli;
+
 fn main() {
-    println!("Hello, world!");
+    let cli = Gcli::parse();
+    cli.process();
 }
