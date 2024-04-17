@@ -1,5 +1,8 @@
-use std::process;
+mod login;
+
 use clap::{Parser, Subcommand};
+use login::login;
+
 
 #[derive(Parser, Debug)]
 #[command(version, about, long_about = None)]
@@ -20,22 +23,20 @@ pub enum Commands {
     Login,
 }
 
-
 impl Gcli {
     /// Will process the command argument and exit with the appropiate code.
-    pub fn process(&self) {
+    pub fn process(&self) -> i32 {
         match &self.command {
-            None => process::exit(0),
-            Some(command) => &self.process_command(&command)
-        };
+            None => 0,
+            Some(command) => self.process_command(&command)
+        }
     }
 
-    fn process_command(&self, command: &Commands) {
+    fn process_command(&self, command: &Commands) -> i32 {
         use Commands::*;
 
         match command {
-            Login => { println!("Arrived at login command") }
+            Login => { login() }
         }
-
     }
 }
