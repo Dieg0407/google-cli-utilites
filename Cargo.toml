@@ -7,3 +7,4 @@ edition = "2021"
 base64 = "0.22.0"
 clap = { version = "4.5.4", features = ["derive"] }
 rand = "0.8.5"
+urlencoding = "2.1.3"

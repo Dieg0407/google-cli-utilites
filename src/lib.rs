@@ -1,8 +1,8 @@
 mod login;
+mod errors;
 
 use clap::{Parser, Subcommand};
 use login::login;
-
 
 #[derive(Parser, Debug)]
 #[command(version, about, long_about = None)]
