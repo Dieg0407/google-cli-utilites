@@ -11,6 +11,7 @@ dependencies {
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
     implementation(libs.guava)
+    implementation("info.picocli:picocli:4.7.6")
 }
 
 java {
